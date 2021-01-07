@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Data estimation Form</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body >
+  <form class="decor" action="{{ url_for('home')}}" method="POST">
+    <div class="form-left-decoration"></div>
+    <div class="form-right-decoration"></div>
+    <div class="circle"></div>
+    <div class="form-inner">
+        <h1>Data estimation Form</h1>
+        <input type="text" name="longitude" id="longitude" placeholder="Longitude" onkeypress="return (event.charCode !=8 && event.charCode ==0 || 
+            ( event.charCode == 46 || (event.charCode >= 48 && event.charCode <= 57)))" />
+        <input type="text" name="latitude" id="latitude" placeholder="Latitude" onkeypress="return (event.charCode !=8 && event.charCode ==0 || 
+            ( event.charCode == 46 || (event.charCode >= 48 && event.charCode <= 57)))" />
+        <input type="text" name="housing_median_age" id="housing_median_age" placeholder="Housing Median Age"onkeypress="return (event.charCode !=8 && event.charCode ==0 || 
+            ( event.charCode == 46 || (event.charCode >= 48 && event.charCode <= 57)))" />
+        <input type="text" name="total_rooms" id="total_rooms" placeholder="Total Rooms" onkeypress="return (event.charCode !=8 && event.charCode ==0 || 
+            ( event.charCode == 46 || (event.charCode >= 48 && event.charCode <= 57)))" />
+        <input type="text" name="total_bedrooms" id="total_bedrooms" placeholder="Total bedrooms" onkeypress="return (event.charCode !=8 && event.charCode ==0 || 
+            ( event.charCode == 46 || (event.charCode >= 48 && event.charCode <= 57)))" />
+        <input type="text" name="population" id="population" placeholder="Population" onkeypress="return (event.charCode !=8 && event.charCode ==0 || 
+            ( event.charCode == 46 || (event.charCode >= 48 && event.charCode <= 57)))" />
+        <input type="text" name="households" id="households" placeholder="Households" onkeypress="return (event.charCode !=8 && event.charCode ==0 || 
+            ( event.charCode == 46 || (event.charCode >= 48 && event.charCode <= 57)))" />
+        <input type="text" name="median_income" id="median_income" placeholder="Median Income" onkeypress="return (event.charCode !=8 && event.charCode ==0 || 
+            ( event.charCode == 46 || (event.charCode >= 48 && event.charCode <= 57)))" />
+        <div class="radio-container">
+            <input checked="" id="island" name="ocean_proximity" type="radio" value="ISLAND">
+            <label for="island">ISLAND</label>
+            <input id="1h_ocean" name="ocean_proximity" type="radio" value="<1H OCEAN">
+            <label for="1h_ocean">1H_OCEAN</label>
+            <input id="near_ocean" name="ocean_proximity" type="radio" value="NEAR OCEAN">
+            <label for="near_ocean">NEAR_OCEAN</label>
+            <input id="near_bay" name="ocean_proximity" type="radio" value="NEAR BAY">
+            <label for="near_bay">NEAR_BAY</label>
+            <input id="inland" name="ocean_proximity" type="radio" value="INLAND">
+            <label for="inland">INLAND</label>
+          </div>
+          <button type="submit">Get your estimated house price</button>
+          {{ prediction_text}}
+    </div>
+  </form>
+</body>
+</html>
